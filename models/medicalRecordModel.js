@@ -1,12 +1,11 @@
 const mongoose = require("mongoose");
-const diseaseType = require("./diseaseTypeModel");
 
 const medicalRecordSchema = new mongoose.Schema(
   {
     medicalRecordId: Number,
     patientID: String,
     examinationDate: Date,
-    Symtoms: String,
+    symtoms: String,
     diseaseTypeId: Number,
     deleted: Boolean,
   }

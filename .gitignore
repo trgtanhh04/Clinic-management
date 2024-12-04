@@ -1,0 +1,13 @@
+#- Mục đích: File .gitignore được sử dụng để chỉ định những tệp hoặc thư mục nào Git nên bỏ qua và 
+#  không đưa vào hệ thống kiểm soát phiên bản (version control). Điều này rất quan trọng để tránh việc vô tình 
+#  đẩy lên các thông tin nhạy cảm hoặc các tệp không cần thiết lên repository (repo) Git của bạn.
+
+#- Sử dụng với .env: Bởi vì file .env thường chứa thông tin nhạy cảm như mật khẩu, 
+#  API keys, chuỗi kết nối, v.v., nó không nên được đưa vào Git repo của bạn. Để đảm bảo điều này, 
+#  bạn cần thêm .env vào file .gitignore.
+
+# dependencies
+/node_modules
+
+# misc
+.env

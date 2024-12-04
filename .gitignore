@@ -10,4 +10,4 @@
 /node_modules
 
 # misc
-.env
+# .env

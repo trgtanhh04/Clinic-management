@@ -1,5 +1,6 @@
 const Patient = require("../../models/patientModel.js")
 const systemConfig = require("../../config/system.js")
+const { StatusCodes } = require('http-status-codes'); 
 
 //1. [GET] /admin/exam-list
 module.exports.index = async (req, res)=>{
@@ -9,13 +10,8 @@ module.exports.index = async (req, res)=>{
     };
 
     const patients = await Patient.find(find);
-    
-    res.render("admin/pages/examList/index.pug", {
-        pageTitle: "Danh sách bệnh nhân",
-        patients: patients
-    })
+    res.status(StatusCodes.OK).json({ success: true, data: patients }); // Trả về danh sách bệnh nhân
 }
-
 
 //2. [GET] /admin/exam-list/create
 module.exports.create = async (req, res)=>{
@@ -25,9 +21,4 @@ module.exports.create = async (req, res)=>{
     };
 
     const patients = await Patient.find(find);
-    
-    res.render("admin/pages/examList/index.pug", {
-        pageTitle: "Danh sách bệnh nhân",
-        patients: patients
-    })
 }

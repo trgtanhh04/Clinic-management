@@ -8,4 +8,6 @@ router.get('/', controller.index)
 //Tạo mới 1 bệnh nhân
 router.get('/create', controller.create)
 
+// router.post('/create', controller.createPost)
+
 module.exports = router

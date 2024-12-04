@@ -9,25 +9,15 @@ module.exports.index = async (req, res)=>{
     };
 
     const patients = await Patient.find(find);
-    
-    res.render("admin/pages/examList/index.pug", {
-        pageTitle: "Danh sách bệnh nhân",
-        patients: patients
-    })
+    res.json({ success: true, data: patients }); // Trả về danh sách bệnh nhân
 }
-
 
 //2. [GET] /admin/exam-list/create
-module.exports.create = async (req, res)=>{
+// module.exports.create = async (req, res)=>{
 
-    let find = {
-        deleted: false
-    };
+//     let find = {
+//         deleted: false
+//     };
 
-    const patients = await Patient.find(find);
-    
-    res.render("admin/pages/examList/index.pug", {
-        pageTitle: "Danh sách bệnh nhân",
-        patients: patients
-    })
-}
+//     const patients = await Patient.find(find);
+// }

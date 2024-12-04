@@ -17,6 +17,7 @@
     "express": "^4.19.2",
     "express-flash": "^0.0.2",
     "express-session": "^1.18.0",
+    "http-status-codes": "^2.3.0",
     "md5": "^2.3.0",
     "method-override": "^3.0.0",
     "moment": "^2.30.1",

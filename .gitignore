@@ -6,12 +6,8 @@
 #  API keys, chuỗi kết nối, v.v., nó không nên được đưa vào Git repo của bạn. Để đảm bảo điều này, 
 #  bạn cần thêm .env vào file .gitignore.
 
-# # dependencies
+# dependencies
 /node_modules
 
-<<<<<<< HEAD
-# # misc
-=======
 # misc
->>>>>>> dc865aab9e2456fb907d1ba24e4f3731bea9d81f
 # .env

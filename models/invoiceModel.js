@@ -6,6 +6,12 @@ const invoiceSchema = new mongoose.Schema({
   examinationFee: Number,
   medicineCost: Number,
   deleted: Boolean,
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+  deletedAt: Date,
+  updatedAt: Date,
 });
 
 const invoice = mongoose.model("invoice", invoiceSchema, "invoices");

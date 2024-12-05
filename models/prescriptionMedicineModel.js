@@ -5,6 +5,12 @@ const prescriptionMedicineSchema = new mongoose.Schema({
   medicineID: String,
   quantity: Number,
   deleted: Boolean,
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+  deletedAt: Date,
+  updatedAt: Date,
 });
 
 const prescriptionMedicine = mongoose.model(

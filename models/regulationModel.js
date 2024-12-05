@@ -6,6 +6,12 @@ const regulationSchema = new mongoose.Schema({
   defaultExaminationFee: Number,
   numberOfUsageMethod: Number,
   deleted: Boolean,
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+  deletedAt: Date,
+  updatedAt: Date,
 });
 
 const regulation = mongoose.model(

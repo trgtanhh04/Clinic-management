@@ -6,6 +6,12 @@ const medicalRecordSchema = new mongoose.Schema({
   symtoms: String,
   diseaseTypeId: { type: Array, default: [] },
   deleted: Boolean,
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+  deletedAt: Date,
+  updatedAt: Date,
 });
 
 const medicalRecord = mongoose.model(

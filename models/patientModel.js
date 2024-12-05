@@ -7,6 +7,12 @@ const patientSchema = new mongoose.Schema({
   address: String,
   image: String,
   deleted: Boolean,
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+  deletedAt: Date,
+  updatedAt: Date,
 });
 
 const Patient = mongoose.model("Patient", patientSchema, "patients");

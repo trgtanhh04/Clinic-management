@@ -1,11 +1,10 @@
 const mongoose = require("mongoose");
 
 const medicineSchema = new mongoose.Schema({
-  medicineID: String,
   medicineName: String,
   unit: String,
   unitPrice: Number,
-  usageMethod: Number,
+  usageMethod: { type: Array, default: [] },
   deleted: Boolean,
 });
 

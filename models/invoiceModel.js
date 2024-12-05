@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
 
 const invoiceSchema = new mongoose.Schema({
-  invoiceID: String,
-  medicalRecordId: Number,
+  medicalRecordID: { type: Array, default: [] },
   totalAmount: Number,
   examinationFee: Number,
   medicineCost: Number,

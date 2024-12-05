@@ -1,11 +1,10 @@
 const mongoose = require("mongoose");
 
 const medicalRecordSchema = new mongoose.Schema({
-  medicalRecordID: String,
   patientID: String,
   examinationDate: Date,
   symtoms: String,
-  diseaseTypeId: Number,
+  diseaseTypeId: { type: Array, default: [] },
   deleted: Boolean,
 });
 

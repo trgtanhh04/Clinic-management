@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const prescriptionMedicineSchema = new mongoose.Schema({
   medicalRecordID: String,
-  medicineID: Number,
+  medicineID: String,
   quantity: Number,
   deleted: Boolean,
 });

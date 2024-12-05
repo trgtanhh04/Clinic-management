@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 
 const diseaseTypeSchema = new mongoose.Schema({
-  diseaseTypeId: String,
   diseaseName: String,
   deleted: Boolean,
 });

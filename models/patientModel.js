@@ -1,17 +1,20 @@
 const mongoose = require("mongoose");
 
-const patientSchema = new mongoose.Schema(
+const patientSchema = new mongoose.Schema({
+  fullName: String,
+  age: Number,
+  sex: String,
+  phone: String,
+  email: String,
+  address: String,
+  deleted: { type: Boolean, default: false },
+  }
+  ,
   {
-    fullName: String,
-    email: String,
-    phone: String, 
-    age: Number,
-    sex: String, 
-    address: String,
-    deleted: Boolean,
+    timestamps: true // Tự động thêm trường createdAt và updatedAt
   }
 );
 
-const Patient = mongoose.model('Patient', patientSchema, "patient");
+const Patient = mongoose.model("Patient", patientSchema, "patients");
 
 module.exports = Patient;

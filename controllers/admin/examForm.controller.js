@@ -1,7 +1,6 @@
 const Patient = require("../../models/patientModel.js")
 const Form = require("../../models/medicalFormModel.js")
 const Medicine = require("../../models/medicineModel.js")
-const Prescription = require("../../models/prescriptionMedicineModel.js")
 const systemConfig = require("../../config/system.js")
 const { StatusCodes } = require('http-status-codes'); 
 
@@ -37,7 +36,7 @@ module.exports.createForm = async (req, res) => {
             _id: req.params.id
         };
 
-        const patient = await Patient.findOne(find);
+        const patient = await Patient.findOne(find);//Lấy ra thông tin bệnh nhân
 
         if (!patient) {
             return res.status(StatusCodes.NOT_FOUND).json({
@@ -46,9 +45,19 @@ module.exports.createForm = async (req, res) => {
             });
         }
 
+        const medicines = await Medicine.find({ deleted: false }); //Các loại thuốc
+        if(!medicines){
+            return res.status(StatusCodes.NOT_FOUND).json({
+                success: false,
+                message: "Medicines not found."
+            });
+        }
+
+
         res.status(StatusCodes.OK).json({
             message: "Provide patient data via POST to create a new form.",
-            data: patient
+            patient: patient,
+            medicines: medicines
         });
     } catch (error) {
         res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
@@ -64,8 +73,7 @@ module.exports.createForm = async (req, res) => {
 module.exports.createFormPost = async (req, res) => {
     try {
         // Lấy ID bệnh nhân từ params
-        req.body.patientID = req.params.id;
-        const { position } = req.body;
+        const { position, symptoms, diagnosis, medicines } = req.body;
 
         // Kiểm tra xem bệnh nhân đã có form hay chưa
         const existingForm = await Form.findOne({ patientID: req.params.id, deleted: false });
@@ -86,7 +94,15 @@ module.exports.createFormPost = async (req, res) => {
         }
 
         // Tạo mới form khám bệnh
-        const newForm = new Form(req.body);
+        const newForm = new Form({
+            patientID: req.params.id, // ID bệnh nhân
+            position, // Vị trí xếp hàng
+            symptoms, // Triệu chứng
+            diagnosis, // Chuẩn đoán
+            medicines, // Danh sách thuốc
+        });
+
+        // Lưu form
         const savedForm = await newForm.save();
 
         // Phản hồi thành công
@@ -102,42 +118,5 @@ module.exports.createFormPost = async (req, res) => {
             message: "An error occurred while creating the form.",
             error: error.message
         });
-    }
-};
-
-
-///----------------------------------------------------------
-//4. [GET] /admin/exam-form/prescription/:id (id ở đây là id của phiếu khám bệnh)
-module.exports.createPrescription = async (req, res) => {
-    try {
-        const record = await Form.findOne({ _id: req.params.id, deleted: false }); //Phiếu khám bệnh đã lập
-        if (!record) {
-            return res.status(404).json({ message: "Record not found" });
-        }
-
-        const medicines = await Medicine.find({ deleted: false }); //Các loại thuốc
-        res.status(200).json({ record, medicines });
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: "Server error" });
-    }
-};
-
-//5. [POST] /admin/exam-form/prescription/:id
-module.exports.createPrescriptionPost = async (req, res) => {
-    try {
-        const prescriptionData = {
-            medicalFormID: req.params.id, // ID phiếu khám bệnh
-            diagnosis: req.body.diagnosis, //Chiệu trứng
-            medicines: req.body.medicines, // Array thuốc
-        };
-
-        const newPrescription = new Prescription(prescriptionData);
-        await newPrescription.save();
-
-        res.status(201).json({ message: "Prescription created successfully", data: newPrescription });
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: "Server error" });
     }
 };

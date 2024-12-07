@@ -1,19 +1,56 @@
-const Patient = require("../../models/patientModel.js")
-const Form = require("../../models/medicalFormModel.js")
-const Prescription = require("../../models/prescriptionMedicineModel.js")
-const { StatusCodes } = require('http-status-codes'); 
+const Patient = require("../../models/patientModel.js");
+const Form = require("../../models/medicalFormModel.js");
+const { StatusCodes } = require("http-status-codes");
+const moment = require("moment");
 
-//1. [GET] admin/patient-search
+// [GET] /admin/patient-search?name=<Tên cần tìm>
 module.exports.index = async (req, res) => {
-    const { name } = req.query; // Lấy tên từ query string
     try {
-        // Tìm bệnh nhân có tên trùng khớp (hoặc gần đúng)
+        const name = req.query.name?.trim(); // Lấy tham số "name" từ query
+
+        if (!name) {
+            return res.status(StatusCodes.BAD_REQUEST).json({
+                success: false,
+                message: "Name query parameter is required."
+            });
+        }
+
+        // Tìm bệnh nhân theo tên
         const patients = await Patient.find({ fullName: { $regex: name, $options: "i" } });
-        
-        res.status(200).json({ success: true, data: patients });
+
+        if (patients.length === 0) {
+            return res.status(StatusCodes.NOT_FOUND).json({
+                success: false,
+                message: "No patients found."
+            });
+        }
+
+        // Tạo mảng kết quả với dữ liệu triệu chứng và chuẩn đoán
+        const results = await Promise.all(
+            patients.map(async (patient) => {
+                const forms = await Form.find({ patientID: patient._id, deleted: false });
+                return forms.map((form) => ({
+                    patientName: patient.fullName,
+                    examDate: moment(form.createdAt).format("YYYY-MM-DD"), // Định dạng ngày khám
+                    symptoms: form.symptoms,
+                    diagnosis: form.diagnosis
+                }));
+            })
+        );
+
+        // Gộp các kết quả từ nhiều phiếu khám
+        const flatResults = results.flat();
+
+        res.status(StatusCodes.OK).json({
+            success: true,
+            data: flatResults
+        });
     } catch (error) {
         console.error(error);
-        res.status(500).json({ success: false, message: "Lỗi server" });
+        res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+            success: false,
+            message: "An error occurred while searching for patients.",
+            error: error.message
+        });
     }
-}
-    
+};

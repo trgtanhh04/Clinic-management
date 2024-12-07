@@ -11,9 +11,4 @@ router.get('/create/:id', controller.createForm)
 
 router.post('/create/:id', controller.createFormPost)
 
-//Chuẩn đoán và kê đơn
-router.get('/prescription/:id', controller.createPrescription)
-
-router.post('/prescription/:id', controller.createPrescriptionPost)
-
 module.exports = router

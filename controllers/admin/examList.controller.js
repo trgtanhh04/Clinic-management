@@ -37,28 +37,47 @@ module.exports.createPost = async (req, res) => {
     try {
         const { fullName, email, phone, age, sex, address } = req.body;
 
-        // Validate required fields
+        // Kiểm tra các trường bắt buộc
         if (!fullName || !email || !phone || !age || !sex || !address) {
             return res.status(StatusCodes.BAD_REQUEST).json({
                 success: false,
-                message: "Missing required fields: fullName, email, phone, age, sex, or address."
+                message: "Thiếu các trường bắt buộc: fullName, email, phone, age, sex, hoặc address."
             });
         }
 
-        // Create a new patient record
-        const newPatient = new Patient(req.body);  // Sử dụng trực tiếp req.body để tạo bệnh nhân
+        // Lấy thời gian bắt đầu và kết thúc của ngày hiện tại
+        const startOfDay = new Date();
+        startOfDay.setHours(0, 0, 0, 0);
 
+        const endOfDay = new Date(startOfDay);
+        endOfDay.setDate(startOfDay.getDate() + 1);
+
+        // Đếm số bệnh nhân đã được tạo trong ngày
+        const patientCountToday = await Patient.countDocuments({
+            createdAt: { $gte: startOfDay, $lt: endOfDay },
+            deleted: false
+        });
+
+        if (patientCountToday >= 40) {
+            return res.status(StatusCodes.FORBIDDEN).json({
+                success: false,
+                message: "Đã đạt giới hạn 40 bệnh nhân trong ngày."
+            });
+        }
+
+        // Tạo mới bệnh nhân
+        const newPatient = new Patient(req.body); // Dùng req.body để tạo bệnh nhân
         const savedPatient = await newPatient.save();
 
         res.status(StatusCodes.CREATED).json({
             success: true,
-            message: "Patient created successfully.",
+            message: "Tạo bệnh nhân thành công.",
             data: savedPatient
         });
     } catch (error) {
         res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
             success: false,
-            message: "An error occurred while creating the patient.",
+            message: "Có lỗi xảy ra khi tạo bệnh nhân.",
             error: error.message
         });
     }

@@ -93,6 +93,25 @@ module.exports.createFormPost = async (req, res) => {
             });
         }
 
+        // Kiểm tra dữ liệu cần thiết từ FE
+        if (!position || !symptoms || !diagnosis || !Array.isArray(medicines)) {
+            return res.status(StatusCodes.BAD_REQUEST).json({
+                success: false,
+                message: "Missing required fields: position, symptoms, diagnosis, or medicines."
+            });
+        }
+
+        // Kiểm tra xem mỗi phần tử trong mảng medicines có đầy đủ thông tin cần thiết không
+        for (let i = 0; i < medicines.length; i++) {
+            const medicine = medicines[i];
+            if (!medicine.medicineID || !medicine.quantity) {
+                return res.status(StatusCodes.BAD_REQUEST).json({
+                    success: false,
+                    message: `Medicine at index ${i} is missing required fields: medicineID or quantity.`
+                });
+            }
+        }
+
         // Tạo mới form khám bệnh
         const newForm = new Form({
             patientID: req.params.id, // ID bệnh nhân

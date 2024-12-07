@@ -41,6 +41,13 @@ const calculateInvoiceDetails = async (idPatient) => {
         throw new Error("Không tìm thấy phiếu khám cho bệnh nhân này.");
     }
 
+    // Kiểm tra xem phiếu khám đã có trong hóa đơn chưa
+    const existingInvoice = await Invoice.findOne({ medicalFormID: medicalForm._id });
+
+    if (existingInvoice) {
+        throw new Error("Hóa đơn đã được lập cho phiếu khám này.");
+    }
+
     let medicineFee = 0;
     const medicinesInfo = [];
 

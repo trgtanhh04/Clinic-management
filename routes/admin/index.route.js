@@ -5,6 +5,7 @@ const patientSearchRoutes = require('./patientSearch.route.js');
 const invoiceRoutes = require('./invoice.route.js');
 const monthlyReportRoutes = require('./monthlyReport.route.js');
 const regulationUpdateRoutes = require('./regulationUpdate.route.js');
+const accountRoutes = require("./account.route.js")
 
 const systemConfig = require("../../config/system.js");
 
@@ -18,4 +19,5 @@ module.exports = (app) => {
     app.use(PATH_ADMIN + '/invoice', invoiceRoutes);  // Hóa đơn thanh toán
     app.use(PATH_ADMIN + '/monthly-report', monthlyReportRoutes);  // Báo cáo tháng
     app.use(PATH_ADMIN + '/regulation-update', regulationUpdateRoutes);  // Thay đổi quy định
+    app.use(PATH_ADMIN + '/account', accountRoutes);  // Quản lý tài khoản
 };

@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const methodOverride = require('method-override');
@@ -11,6 +12,15 @@ const { StatusCodes, getReasonPhrase } = require('http-status-codes'); // Thêm 
 
 // Tải biến môi trường
 require('dotenv').config();
+
+//Dung cookies
+app.use(cookieParser());
+
+app.use(cors({
+    origin: 'http://localhost:3000', // URL của frontend
+    credentials: true, // Cho phép gửi cookie
+}));
+
 
 // Nhập và cấu hình cơ sở dữ liệu
 const database = require("./config/database.js");

@@ -41,7 +41,6 @@ module.exports.loginPost = async (req, res) => {
 
     // Tạo cookie token
     res.cookie("token", user.token, {
-        httpOnly: true, // Để bảo mật hơn, cookie này không thể truy cập từ JavaScript
         maxAge: 24 * 60 * 60 * 1000, // Thời gian hết hạn của cookie (1 ngày)
     });
 

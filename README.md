@@ -50,22 +50,21 @@ Clinic Management
 
 Dưới đây là cây phân rã của hệ thống. Cây phân rã này mô tả các thành phần và mối quan hệ giữa chúng trong hệ thống quản lý bệnh viện.
 
-![Cây phân rã](https://github.com/trgtanhh04/Clinic-management/blob/main/cayphanra.png))
+![Cây phân rã](https://github.com/trgtanhh04/Clinic-management/blob/main/cayphanra.png)
 
 ## Mô Hình MVC
 
 MVC là một kiến trúc phần mềm phổ biến giúp tách biệt các thành phần trong ứng dụng. Dưới đây là mô hình MVC cho hệ thống này:
 
-![Mô hình MVC](./path/to/your/mvc-image.png)
+![Mô hình MVC](https://github.com/trgtanhh04/Clinic-management/blob/main/mvc.png)
 
 ## Class Diagram
 
 Dưới đây là biểu đồ lớp của các đối tượng trong hệ thống Clinic Management. Các lớp trong diagram này thể hiện các mô hình dữ liệu và các quan hệ giữa chúng.
 
-![Class Diagram](./path/to/your/class-diagram-image.png)
+![Class Diagram](https://github.com/trgtanhh04/Clinic-management/blob/main/classdiagram.png)
 
-## Cài Đặt và Sử Dụng
+## Data base
 
-1. Clone repository này:
-   ```bash
-   git clone https://github.com/trgtanhh04/Clinic-management.git
+![Class Diagram](https://github.com/trgtanhh04/Clinic-management/blob/main/er.png)
+

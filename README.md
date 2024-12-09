@@ -50,7 +50,7 @@ Clinic Management
 
 Dưới đây là cây phân rã của hệ thống. Cây phân rã này mô tả các thành phần và mối quan hệ giữa chúng trong hệ thống quản lý bệnh viện.
 
-![Cây phân rã]([./path/to/your/tree-image.png](https://github.com/trgtanhh04/Clinic-management/blob/main/cayphanra.png))
+![Cây phân rã](https://github.com/trgtanhh04/Clinic-management/blob/main/cayphanra.png))
 
 ## Mô Hình MVC
 

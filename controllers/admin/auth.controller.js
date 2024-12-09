@@ -19,20 +19,17 @@ module.exports.login = async (req, res) => {
 module.exports.loginPost = async (req, res) => {
     const { email, password } = req.body;
 
-    // Tìm người dùng theo email và kiểm tra xem tài khoản có bị xóa không
     const user = await Account.findOne({
         email: email,
         deleted: false,
     });
 
-    // Nếu không tìm thấy người dùng
     if (!user) {
         return res.status(StatusCodes.NOT_FOUND).json({
             message: "Tài khoản không tồn tại hoặc đã bị xóa.",
         });
     }
 
-    // Kiểm tra mật khẩu
     if (password !== user.password) {
         return res.status(StatusCodes.UNAUTHORIZED).json({
             message: "Mật khẩu không chính xác.",

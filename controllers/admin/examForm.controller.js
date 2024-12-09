@@ -93,7 +93,6 @@ module.exports.createFormPost = async (req, res) => {
             });
         }
 
-        // Kiểm tra dữ liệu cần thiết từ FE
         if (!position || !symptoms || !diagnosis || !Array.isArray(medicines)) {
             return res.status(StatusCodes.BAD_REQUEST).json({
                 success: false,
@@ -101,7 +100,6 @@ module.exports.createFormPost = async (req, res) => {
             });
         }
 
-        // Kiểm tra xem mỗi phần tử trong mảng medicines có đầy đủ thông tin cần thiết không
         for (let i = 0; i < medicines.length; i++) {
             const medicine = medicines[i];
             if (!medicine.medicineID || !medicine.quantity) {
@@ -112,26 +110,22 @@ module.exports.createFormPost = async (req, res) => {
             }
         }
 
-        // Tạo mới form khám bệnh
         const newForm = new Form({
-            patientID: req.params.id, // ID bệnh nhân
-            position, // Vị trí xếp hàng
-            symptoms, // Triệu chứng
-            diagnosis, // Chuẩn đoán
-            medicines, // Danh sách thuốc
+            patientID: req.params.id, 
+            position, 
+            symptoms, 
+            diagnosis, 
+            medicines, 
         });
 
-        // Lưu form
         const savedForm = await newForm.save();
 
-        // Phản hồi thành công
         res.status(StatusCodes.CREATED).json({
             success: true,
             message: "Form created successfully.",
             data: savedForm
         });
     } catch (error) {
-        // Phản hồi lỗi
         res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
             success: false,
             message: "An error occurred while creating the form.",

@@ -59,7 +59,6 @@ module.exports.revenue = async (req, res) => {
             revenue: revenueByDay[day] || 0,
         }));
 
-        // Phản hồi
         res.status(StatusCodes.OK).json({
             success: true,
             month,
@@ -85,18 +84,14 @@ module.exports.medicine = async (req, res) => {
         });
       }
   
-      // Lấy danh sách các phiếu khám bệnh
       const forms = await Form.find({ deleted: false });
   
-      // Khai báo đối tượng thống kê thuốc
       const medicineUsage = {};
   
       forms.forEach((form) => {
         const formDate = moment(form.createdAt);
   
-        // Kiểm tra tháng của phiếu khám
         if (formDate.month() + 1 === month) {
-          // Lấy danh sách thuốc trong form
           const countedMedicines = new Set();
   
           form.medicines.forEach((medicine) => {
@@ -112,7 +107,6 @@ module.exports.medicine = async (req, res) => {
               };
             }
   
-            // Cộng dồn số lượng thuốc
             medicineUsage[medicineID].totalQuantity += quantity;
   
             // Kiểm tra nếu thuốc chưa được tính usageCount trong form này
@@ -124,10 +118,8 @@ module.exports.medicine = async (req, res) => {
         }
       });
   
-      // Lấy thông tin chi tiết từ bảng thuốc
       const medicineDetails = await Medicine.find({ deleted: false });
   
-      // Tạo báo cáo
       const report = Object.values(medicineUsage).map((medicineStat) => {
         const medicineDetail = medicineDetails.find(
           (med) => med._id.toString() === medicineStat.medicineID
@@ -142,7 +134,6 @@ module.exports.medicine = async (req, res) => {
         };
       });
   
-      // Sắp xếp báo cáo theo tên thuốc
       report.sort((a, b) => (a.name || "").localeCompare(b.name || ""));
   
       // Trả về kết quả

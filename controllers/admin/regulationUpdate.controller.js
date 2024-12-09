@@ -167,10 +167,8 @@ module.exports.createDiseasePost = async (req, res) => {
             medication
         });
 
-        // Lưu bệnh vào cơ sở dữ liệu
         await newDisease.save();
 
-        // Trả về thông báo thành công
         res.status(StatusCodes.CREATED).json({
             message: "Bệnh đã được tạo thành công.",
             disease: newDisease, // Trả về thông tin bệnh vừa tạo
@@ -189,8 +187,8 @@ module.exports.deleteDisease = async (req, res) => {
 
     try {
         const disease = await Disease.findOneAndUpdate(
-            { _id: id }, // Tìm kiếm theo id
-            { deleted: true } // Cập nhật trường deleted thành true
+            { _id: id }, 
+            { deleted: true }
         );
 
         if (!disease) {

@@ -38,7 +38,6 @@ module.exports.index = async (req, res) => {
             })
         );
 
-        // Gộp các kết quả từ nhiều phiếu khám
         const flatResults = results.flat();
 
         res.status(StatusCodes.OK).json({

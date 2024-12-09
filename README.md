@@ -1,6 +1,12 @@
-# Sales Management System
+# Clinic Management System
 
-## Cấu trúc thư mục
+## Overview
+
+The Clinic Management System is designed to manage clinic operations such as patient registration, medical form handling, invoice generation, report creation, and much more. This project follows the **MVC (Model-View-Controller)** architecture, ensuring clean and organized code separation for ease of maintenance and scalability.
+
+## Cấu trúc Thư Mục
+
+Dưới đây là cấu trúc thư mục của dự án:
 
 <pre>
 Clinic Management
@@ -39,3 +45,27 @@ Clinic Management
 ├── package.json
 └── README.md
 </pre>
+
+## Cây Phân Rã
+
+Dưới đây là cây phân rã của hệ thống. Cây phân rã này mô tả các thành phần và mối quan hệ giữa chúng trong hệ thống quản lý bệnh viện.
+
+![Cây phân rã](./path/to/your/tree-image.png)
+
+## Mô Hình MVC
+
+MVC là một kiến trúc phần mềm phổ biến giúp tách biệt các thành phần trong ứng dụng. Dưới đây là mô hình MVC cho hệ thống này:
+
+![Mô hình MVC](./path/to/your/mvc-image.png)
+
+## Class Diagram
+
+Dưới đây là biểu đồ lớp của các đối tượng trong hệ thống Clinic Management. Các lớp trong diagram này thể hiện các mô hình dữ liệu và các quan hệ giữa chúng.
+
+![Class Diagram](./path/to/your/class-diagram-image.png)
+
+## Cài Đặt và Sử Dụng
+
+1. Clone repository này:
+   ```bash
+   git clone https://github.com/trgtanhh04/Clinic-management.git

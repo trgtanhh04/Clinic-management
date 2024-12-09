@@ -4,6 +4,8 @@ const Form = require("../../models/medicalFormModel.js");
 const Medicine = require("../../models/medicineModel.js");
 const Invoice = require("../../models/invoiceModel.js")
 const { StatusCodes } = require("http-status-codes");
+const Regulation = require("../../models/regulationModel.js")
+
 
 const moment = require("moment");
 
@@ -68,7 +70,10 @@ const calculateInvoiceDetails = async (idPatient) => {
         });
     }
 
-    const examFee = 30; // Tiền khám cố định
+    //Lây thông tin quy định
+    const regulation = await Regulation.findOne();
+
+    const examFee = regulation.examFee; // Tiền khám cố định
     const totalFee = examFee + medicineFee;
     const patient = await Patient.findOne({_id: idPatient, deleted: false})
 

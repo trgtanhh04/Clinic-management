@@ -1,6 +1,7 @@
 const Patient = require("../../models/patientModel.js")
 const systemConfig = require("../../config/system.js")
 const { StatusCodes } = require('http-status-codes'); 
+const Regulation = require("../../models/regulationModel.js")
 
 //-------------------------------------------------------------------------
 // 1. [GET] /admin/exam-list
@@ -58,7 +59,11 @@ module.exports.createPost = async (req, res) => {
             deleted: false
         });
 
-        if (patientCountToday >= 40) {
+        //Lây thông tin quy định
+        const regulation = await Regulation.findOne();
+
+
+        if (patientCountToday >= regulation.maxPatientsPerDay) {
             return res.status(StatusCodes.FORBIDDEN).json({
                 success: false,
                 message: "Đã đạt giới hạn 40 bệnh nhân trong ngày."

@@ -2,10 +2,9 @@ const mongoose = require("mongoose");
 
 const patientSchema = new mongoose.Schema({
   fullName: String,
-  age: Number,
+  yearOfBirth: Number,
   sex: String,
   phone: String,
-  email: String,
   address: String,
   deleted: { type: Boolean, default: false },
   }

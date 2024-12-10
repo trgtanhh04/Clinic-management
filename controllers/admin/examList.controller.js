@@ -36,10 +36,10 @@ module.exports.create = async (req, res) => {
 // 3. [POST] /admin/exam-list/create
 module.exports.createPost = async (req, res) => {
     try {
-        const { fullName, email, phone, age, sex, address } = req.body;
+        const { fullName, yearOfBirth, sex, phone, address } = req.body;
 
         // Kiểm tra các trường bắt buộc
-        if (!fullName || !email || !phone || !age || !sex || !address) {
+        if (!fullName || !phone || !age || !sex || !address) {
             return res.status(StatusCodes.BAD_REQUEST).json({
                 success: false,
                 message: "Thiếu các trường bắt buộc: fullName, email, phone, age, sex, hoặc address."
@@ -61,7 +61,6 @@ module.exports.createPost = async (req, res) => {
 
         //Lây thông tin quy định
         const regulation = await Regulation.findOne();
-
 
         if (patientCountToday >= regulation.maxPatientsPerDay) {
             return res.status(StatusCodes.FORBIDDEN).json({

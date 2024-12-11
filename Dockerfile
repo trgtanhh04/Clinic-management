@@ -1,4 +1,4 @@
-FROM node:18-alpine3.20
+FROM node:18-slim
 WORKDIR /backend
 COPY . .
 RUN npm install

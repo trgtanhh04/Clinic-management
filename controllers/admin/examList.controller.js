@@ -39,7 +39,7 @@ module.exports.createPost = async (req, res) => {
         const { fullName, yearOfBirth, sex, phone, address } = req.body;
 
         // Kiểm tra các trường bắt buộc
-        if (!fullName || !phone || !age || !sex || !address) {
+        if (!fullName || !phone || !yearOfBirth || !sex || !address) {
             return res.status(StatusCodes.BAD_REQUEST).json({
                 success: false,
                 message: "Thiếu các trường bắt buộc: fullName, email, phone, age, sex, hoặc address."

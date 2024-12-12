@@ -42,6 +42,7 @@ module.exports.index = async (req, res) => {
 
         res.status(StatusCodes.OK).json({
             success: true,
+            namePatient: flatResults.map(patient => patient.patientName),
             data: flatResults
         });
     } catch (error) {

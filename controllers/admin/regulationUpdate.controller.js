@@ -57,7 +57,8 @@ module.exports.getRegulation = async (req, res) => {
     }
 
     res.status(StatusCodes.OK).json({
-      regulation: regulation,
+      maxPatientsPerDay: regulation.maxPatientsPerDay,
+      examFee: regulation.examFee,
     });
   } catch (error) {
     console.error("Lỗi khi lấy quy định:", error);

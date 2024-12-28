@@ -45,7 +45,6 @@ module.exports.createPost = async (req, res) => {
                 message: "Thiếu các trường bắt buộc: fullName, email, phone, age, sex, hoặc address."
             });
         }
-
         // Lấy thời gian bắt đầu và kết thúc của ngày hiện tại
         const startOfDay = new Date();
         startOfDay.setHours(0, 0, 0, 0);
@@ -59,8 +58,8 @@ module.exports.createPost = async (req, res) => {
     //         deleted: false
     //     });
 
-    //     //Lây thông tin quy định
-    //     const regulation = await Regulation.findOne();
+        //Lây thông tin quy định
+        const regulation = await Regulation.findOne();
 
     //     if (patientCountToday >= regulation.maxPatientsPerDay) {
     //         return res.status(StatusCodes.FORBIDDEN).json({

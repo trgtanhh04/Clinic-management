@@ -36,10 +36,10 @@ module.exports.create = async (req, res) => {
 // 3. [POST] /admin/exam-list/create
 module.exports.createPost = async (req, res) => {
     try {
-        const { fullName, yearOfBirth, sex, phone, address, examDate } = req.body;
+        const { fullName, yearOfBirth, sex, phone, address } = req.body;
 
         // Kiểm tra các trường bắt buộc
-        if (!fullName || !phone || !yearOfBirth || !sex || !address || !examDate) {
+        if (!fullName || !phone || !yearOfBirth || !sex || !address) {
             return res.status(StatusCodes.BAD_REQUEST).json({
                 success: false,
                 message: "Thiếu các trường bắt buộc: fullName, email, phone, age, sex, hoặc address."
@@ -53,7 +53,21 @@ module.exports.createPost = async (req, res) => {
         const endOfDay = new Date(startOfDay);
         endOfDay.setDate(startOfDay.getDate() + 1);
 
-        
+    //    // Đếm số bệnh nhân đã được tạo trong ngày
+    //     const patientCountToday = await Patient.countDocuments({
+    //         createdAt: { $gte: startOfDay, $lt: endOfDay },
+    //         deleted: false
+    //     });
+
+    //     //Lây thông tin quy định
+    //     const regulation = await Regulation.findOne();
+
+    //     if (patientCountToday >= regulation.maxPatientsPerDay) {
+    //         return res.status(StatusCodes.FORBIDDEN).json({
+    //             success: false,
+    //             message: "Đã đạt giới hạn 40 bệnh nhân trong ngày."
+    //         });
+    //     } 
 
         // Tạo mới bệnh nhân
         const newPatient = new Patient(req.body); // Dùng req.body để tạo bệnh nhân

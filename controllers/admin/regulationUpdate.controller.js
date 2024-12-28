@@ -8,6 +8,22 @@ const Disease = require("../../models/diseaseTypeModel.js")
 const { StatusCodes } = require("http-status-codes");
 const moment = require("moment");
 
+
+// 0. [GET] admin/regulation-update/general-regulation
+module.exports.getRegulation = async (req, res) => {
+    try {
+        const regulation = await Regulation.findOne({deleted: false})
+        res.status(StatusCodes.OK).json({
+            message: "Truy van thanh cong",
+            data: regulation
+        })
+    } catch (error) {
+        res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+            message: "Truy van khong thanh cong"
+        })
+    }
+}
+
 // 1. [POST] admin/regulation-update/general-regulation
 module.exports.regulation = async (req, res) => {
     try {

@@ -4,6 +4,7 @@ const router = express.Router()
 const controller = require("../../controllers/admin/regulationUpdate.controller.js")
 
 //1. Các quy định chung
+router.get('/general-regulation', controller.getRegulation)
 router.post('/general-regulation', controller.regulation)
 
 //2. Quy định thuốc

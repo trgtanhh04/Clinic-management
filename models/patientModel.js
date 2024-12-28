@@ -6,7 +6,6 @@ const patientSchema = new mongoose.Schema({
   sex: String,
   phone: String,
   address: String,
-  examDate: String,
   deleted: { type: Boolean, default: false },
   }
   ,

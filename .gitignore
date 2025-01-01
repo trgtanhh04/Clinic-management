@@ -7,7 +7,7 @@
 #  bạn cần thêm .env vào file .gitignore.
 
 # dependencies
-/node_modules
+node_modules/
 
-# misc
-# .env
+#misc
+.env

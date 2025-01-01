@@ -17,7 +17,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "https://tranroger.github.io/", // URL của frontend
+    origin: "https://tranroger.github.io", // URL của frontend
     credentials: true, // Cho phép gửi cookie
   })
 );

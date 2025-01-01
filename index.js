@@ -17,7 +17,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "http://localhost:5173", // URL của frontend
+    origin: "https://tranroger.github.io/", // URL của frontend
     credentials: true, // Cho phép gửi cookie
   })
 );

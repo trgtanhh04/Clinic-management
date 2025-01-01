@@ -16,6 +16,8 @@ module.exports.login = async (req, res) => {
 };
 
 // 2. [POST] admin/auth/login
+global.loggedInUser = null;
+
 module.exports.loginPost = async (req, res) => {
     const { email, password } = req.body;
 

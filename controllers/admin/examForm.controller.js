@@ -76,22 +76,22 @@ module.exports.createFormPost = async (req, res) => {
         const { position, symptoms, diagnosis, medicines } = req.body;
 
         // Kiểm tra xem bệnh nhân đã có form hay chưa
-        const existingForm = await Form.findOne({ patientID: req.params.id, deleted: false });
-        if (existingForm) {
-            return res.status(StatusCodes.CONFLICT).json({
-                success: false,
-                message: "This patient already has a form."
-            });
-        }
+        // const existingForm = await Form.findOne({ patientID: req.params.id, deleted: false });
+        // if (existingForm) {
+        //     return res.status(StatusCodes.CONFLICT).json({
+        //         success: false,
+        //         message: "This patient already has a form."
+        //     });
+        // }
 
         // Kiểm tra xem position đã được sử dụng chưa
-        const positionExists = await Form.findOne({ position, deleted: false });
-        if (positionExists) {
-            return res.status(StatusCodes.CONFLICT).json({
-                success: false,
-                message: `Position ${position} is already assigned to another patient.`
-            });
-        }
+        // const positionExists = await Form.findOne({ position, deleted: false });
+        // if (positionExists) {
+        //     return res.status(StatusCodes.CONFLICT).json({
+        //         success: false,
+        //         message: `Position ${position} is already assigned to another patient.`
+        //     });
+        // }
 
         if (!position || !symptoms || !diagnosis || !Array.isArray(medicines)) {
             return res.status(StatusCodes.BAD_REQUEST).json({

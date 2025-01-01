@@ -52,21 +52,21 @@ module.exports.createPost = async (req, res) => {
         const endOfDay = new Date(startOfDay);
         endOfDay.setDate(startOfDay.getDate() + 1);
 
-        // Đếm số bệnh nhân đã được tạo trong ngày
-        const patientCountToday = await Patient.countDocuments({
-            createdAt: { $gte: startOfDay, $lt: endOfDay },
-            deleted: false
-        });
+    //    // Đếm số bệnh nhân đã được tạo trong ngày
+    //     const patientCountToday = await Patient.countDocuments({
+    //         createdAt: { $gte: startOfDay, $lt: endOfDay },
+    //         deleted: false
+    //     });
 
         //Lây thông tin quy định
         const regulation = await Regulation.findOne();
 
-        if (patientCountToday >= regulation.maxPatientsPerDay) {
-            return res.status(StatusCodes.FORBIDDEN).json({
-                success: false,
-                message: "Đã đạt giới hạn 40 bệnh nhân trong ngày."
-            });
-        }
+    //     if (patientCountToday >= regulation.maxPatientsPerDay) {
+    //         return res.status(StatusCodes.FORBIDDEN).json({
+    //             success: false,
+    //             message: "Đã đạt giới hạn 40 bệnh nhân trong ngày."
+    //         });
+    //     } 
 
         // Tạo mới bệnh nhân
         const newPatient = new Patient(req.body); // Dùng req.body để tạo bệnh nhân

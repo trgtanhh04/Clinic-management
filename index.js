@@ -17,7 +17,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "https://clinic-fe.vercel.app", // URL của frontend
+    origin: ["https://clinic-fe.vercel.app", "http://localhost:5173"], // URL của frontend
     credentials: true, // Cho phép gửi cookie
   })
 );

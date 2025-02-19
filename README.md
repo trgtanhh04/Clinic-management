@@ -4,9 +4,9 @@
 
 The Clinic Management System is designed to manage clinic operations such as patient registration, medical form handling, invoice generation, report creation, and much more. This project follows the **MVC (Model-View-Controller)** architecture, ensuring clean and organized code separation for ease of maintenance and scalability.
 
-## Cấu trúc Thư Mục
+## Directory Structure
 
-Dưới đây là cấu trúc thư mục của dự án:
+Below is the project folder structure:
 
 <pre>
 Clinic Management
@@ -46,22 +46,21 @@ Clinic Management
 └── README.md
 </pre>
 
-## Cây Phân Rã
+## Decomposition Tree.
 
-Dưới đây là cây phân rã của hệ thống. Cây phân rã này mô tả các thành phần và mối quan hệ giữa chúng trong hệ thống quản lý bệnh viện.
+Below is the decomposition tree of the system. This decomposition tree describes the components and the relationships between them in the hospital management system.
 
 ![Cây phân rã](https://github.com/trgtanhh04/Clinic-management/blob/main/cayphanra.png)
 
-## Mô Hình MVC
+## MVC Pattern
 
-MVC là một kiến trúc phần mềm phổ biến giúp tách biệt các thành phần trong ứng dụng. Dưới đây là mô hình MVC cho hệ thống này:
+MVC is a popular software architecture that helps separate the components in an application. Here is the MVC pattern for this system:
 
 ![Mô hình MVC](https://github.com/trgtanhh04/Clinic-management/blob/main/mvc.png)
 
 ## Class Diagram
 
-Dưới đây là biểu đồ lớp của các đối tượng trong hệ thống Clinic Management. Các lớp trong diagram này thể hiện các mô hình dữ liệu và các quan hệ giữa chúng.
-
+Below is a class diagram of the objects in the Clinic Management system. The classes in this diagram represent the data models and the relationships between them.
 ![Class Diagram](https://github.com/trgtanhh04/Clinic-management/blob/main/classdiagram.png)
 
 ## Data base

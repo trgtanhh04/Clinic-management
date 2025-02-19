@@ -4,6 +4,23 @@
 
 The Clinic Management System is designed to manage clinic operations such as patient registration, medical form handling, invoice generation, report creation, and much more. This project follows the **MVC (Model-View-Controller)** architecture, ensuring clean and organized code separation for ease of maintenance and scalability.
 
+## Member information
+
+| **No** | **Full name** | **Email** 
+|-------|---------------|---------|
+| 1     | Trương Tiến Anh | truongtienanh16@gmail.com |  
+| 2     | Trần Hùng Anh | tranhunganh@gmail.com | 
+
+
+## Contribute
+
+| **No** | **Full name** | **Email** | **Role** |
+|-------|---------------|---------|--------|
+| 1     | Trương Tiến Anh | truongtienanh16@gmail.com | Back end
+| 2     | Trần Hùng Anh | tranhunganh@gmail.com | Front end
+
+
+
 ## Directory Structure
 
 Below is the project folder structure:

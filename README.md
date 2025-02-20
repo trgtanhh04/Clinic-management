@@ -18,11 +18,6 @@ MVC is a popular software architecture that helps separate the components in an 
 
 ![Mô hình MVC](https://github.com/trgtanhh04/Clinic-management/blob/main/mvc.png)
 
-## Class Diagram
-
-Below is a class diagram of the objects in the Clinic Management system. The classes in this diagram represent the data models and the relationships between them.
-![Class Diagram](https://github.com/trgtanhh04/Clinic-management/blob/main/classdiagram.png)
-
 ## Data base
 
 ![Class Diagram](https://github.com/trgtanhh04/Clinic-management/blob/main/er.png)

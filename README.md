@@ -34,5 +34,34 @@ MVC is a popular software architecture that helps separate the components in an 
 
 [Youtube](https://youtu.be/mjyDzThRdGM?si=HIIRGrxNZKDJRdgM)
 
+## 🚀 How to Run the Project  
 
+### 1️. Clone the Repository  
+```bash
+git clone <repository-url>
+cd <repository-folder>
+```
+### 2. Install Dependencies
+All required libraries are listed in library.txt. Run the command below to install:
+```bash
+xargs npm install < library.txt
+If using yarn, use: xargs yarn add < library.txt
+```
+
+### 3.Run the Backend Server
+```bash
+cd <link_project>
+npm start
+```
+
+### 4. Run the Frontend App
+Navigate to the Frontend folder and start the React/Vite app:
+```bash
+cd <link_project>
+npm run dev
+```
+
+### 5 Access the Application
+🌐 Backend API: http://localhost:5000
+🎨 Frontend App: http://localhost:5173
 

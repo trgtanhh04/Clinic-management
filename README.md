@@ -8,8 +8,8 @@ The Clinic Management System is designed to manage clinic operations such as pat
 
 | **No** | **Full name** | **Email** | **Role** | **Link project**|
 |-------|---------------|---------|-----|-----|
-| 1     | Trương Tiến Anh | truongtienanh16@gmail.com |  Back end | https://github.com/trgtanhh04/Clinic-management
-| 2     | Trần Hùng Anh | tranhunganh@gmail.com | Front end | https://github.com/TranRoger/front-end.git
+| 1     | Trương Tiến Anh | truongtienanh16@gmail.com |  Backend  | https://github.com/trgtanhh04/Clinic-management
+| 2     | Trần Hùng Anh | tranhunganh@gmail.com | Frontend | https://github.com/TranRoger/front-end.git
 
 
 ## Directory Structure

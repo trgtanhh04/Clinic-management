@@ -52,6 +52,12 @@ MVC is a popular software architecture that helps separate the components in an 
 </p>
 
 ---
+## Class diagram
+<p align="center">
+  <img src=https://github.com/trgtanhh04/Clinic-management/blob/main/classdiagram.png width="60%" alt="Database Schema">
+</p>
+
+---
 
 ## 🎥 Video Demo
 

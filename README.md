@@ -50,18 +50,18 @@ If using yarn, use: xargs yarn add < library.txt
 
 ### 3.Run the Backend Server
 ```bash
-cd <link_project>
+cd <repository-folder>
 npm start
 ```
 
 ### 4. Run the Frontend App
 Navigate to the Frontend folder and start the React/Vite app:
 ```bash
-cd <link_project>
+cd <repository-folder>
 npm run dev
 ```
 
 ### 5 Access the Application
-🌐 Backend API: http://localhost:5000
-🎨 Frontend App: http://localhost:5173
+- Backend API: http://localhost:3000
+- Frontend App: http://localhost:5173
 

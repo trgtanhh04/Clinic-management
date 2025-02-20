@@ -1,0 +1,36 @@
+# Dependencies (Chạy ứng dụng)
+body-parser
+cloudinary
+cookie-parser
+cors
+dotenv
+express
+express-flash
+express-session
+http-status-codes
+md5
+method-override
+moment
+mongodb
+mongoose
+mongoose-slug-updater
+multer
+pug
+streamifier
+tinymce
+
+# DevDependencies (Dùng khi phát triển)
+@eslint/js
+@types/react
+@types/react-dom
+@vitejs/plugin-react
+autoprefixer
+eslint
+eslint-plugin-react
+eslint-plugin-react-hooks
+eslint-plugin-react-refresh
+globals
+postcss
+tailwindcss
+ts-node
+vite

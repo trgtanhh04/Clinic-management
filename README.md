@@ -54,12 +54,6 @@ Clinic Management
 └── README.md
 </pre>
 
-## Decomposition Tree.
-
-Below is the decomposition tree of the system. This decomposition tree describes the components and the relationships between them in the hospital management system.
-
-![Cây phân rã](https://github.com/trgtanhh04/Clinic-management/blob/main/cayphanra.png)
-
 ## MVC Pattern
 
 MVC is a popular software architecture that helps separate the components in an application. Here is the MVC pattern for this system:

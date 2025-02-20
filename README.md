@@ -34,7 +34,7 @@ MVC is a popular software architecture that helps separate the components in an 
 
 [Youtube](https://youtu.be/mjyDzThRdGM?si=HIIRGrxNZKDJRdgM)
 
-## 🚀 How to Run the Project  
+## How to Run the Project  
 
 ### 1️. Clone the Repository  
 ```bash

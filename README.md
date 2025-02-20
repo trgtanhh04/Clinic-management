@@ -10,7 +10,13 @@ The Clinic Management System is designed to manage clinic operations such as pat
 |-------|---------------|---------|-----|-----|
 | 1     | Trương Tiến Anh | truongtienanh16@gmail.com |  Backend  | https://github.com/trgtanhh04/Clinic-management
 | 2     | Trần Hùng Anh | tranhunganh@gmail.com | Frontend | https://github.com/TranRoger/front-end.git
-
+## Features
+Patient Management – Create, update, and search for patient records
+Appointment Scheduling – Book and manage medical appointments
+Billing System – Generate invoices and process payments
+Monthly Reports – Generate financial and operational reports
+Authentication – Session-based login/logout system
+Regulation Management – Update clinic rules dynamically
 
 ## MVC Pattern
 
@@ -22,9 +28,16 @@ MVC is a popular software architecture that helps separate the components in an 
 
 ![Class Diagram](https://github.com/trgtanhh04/Clinic-management/blob/main/er.png)
 
-##Video demo
+## Video demo
 
 [Youtube](https://youtu.be/mjyDzThRdGM?si=HIIRGrxNZKDJRdgM)
 
+🚀 Features
+✅ Patient Management – Create, update, and search for patient records
+✅ Appointment Scheduling – Book and manage medical appointments
+✅ Billing System – Generate invoices and process payments
+✅ Monthly Reports – Generate financial and operational reports
+✅ Authentication – Session-based login/logout system
+✅ Regulation Management – Update clinic rules dynamically
 
 

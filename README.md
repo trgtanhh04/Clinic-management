@@ -52,7 +52,7 @@ MVC is a popular software architecture that helps separate the components in an 
 
 ### 1. Clone the Repository  
 ```bash
-git clone <repository-url>
+git clone https://github.com/trgtanhh04/Clinic-management.git
 cd <repository-folder>
 ```
 

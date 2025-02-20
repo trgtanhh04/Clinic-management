@@ -14,6 +14,9 @@ The **Clinic Management System** is designed to manage clinic operations such as
 ---
 
 ## Features
+<p align="center">
+  <img src=https://github.com/trgtanhh04/Clinic-management/blob/main/demo.png width="45%" alt="Dashboard">
+</p>
 
 - **Patient Management** – Create, update, and search for patient records  
 - **Appointment Scheduling** – Book and manage medical appointments  

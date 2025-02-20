@@ -69,3 +69,8 @@ Below is a class diagram of the objects in the Clinic Management system. The cla
 
 ![Class Diagram](https://github.com/trgtanhh04/Clinic-management/blob/main/er.png)
 
+##Video demo
+[📹 Xem video](https://github.com/trgtanhh04/Clinic-management/blob/main/Demo.mp4)
+
+
+

@@ -20,7 +20,18 @@ The **Clinic Management System** is designed to manage clinic operations such as
 - **Billing System** – Generate invoices and process payments  
 - **Monthly Reports** – Generate financial and operational reports  
 - **Authentication** – Secure session-based login/logout system  
-- **Regulation Management** – Update clinic rules dynamically  
+- **Regulation Management** – Update clinic rules dynamically
+  
+---
+## Technologies Used  
+
+- **Backend:** Node.js, Express.js, and Mongoose (MongoDB) following the **MVC pattern**.  
+- **Frontend:** React and Vite, providing a **fast and interactive UI**.  
+- **API Design:** RESTful APIs for **medical appointments, patient records, billing, reports, and system regulations**.  
+- **Database:** MongoDB for **storing patient records, appointments, and invoices**.  
+- **Authentication:** Secure **user authentication** (login, logout, registration).  
+- **PDF Generation:** Automatic **invoice printing** and report generation.  
+- **Data Visualization:** Display **monthly reports and statistics** for tracking clinic performance.  
 
 ---
 

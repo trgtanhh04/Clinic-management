@@ -15,7 +15,7 @@ The **Clinic Management System** is designed to manage clinic operations such as
 
 ## Features
 <p align="center">
-  <img src=https://github.com/trgtanhh04/Clinic-management/blob/main/demo.png width="80%" alt="Dashboard">
+  <img src=https://github.com/trgtanhh04/Clinic-management/blob/main/demo.png width="60%" alt="Dashboard">
 </p>
 
 - **Patient Management** – Create, update, and search for patient records  
@@ -43,7 +43,7 @@ The **Clinic Management System** is designed to manage clinic operations such as
 MVC is a popular software architecture that helps separate the components in an application. Here is the MVC pattern for this system:
 
 <p align="center">
-  <img src="https://github.com/trgtanhh04/Clinic-management/blob/main/mvc.png" width="60%" alt="MVC Pattern">
+  <img src="https://github.com/trgtanhh04/Clinic-management/blob/main/mvc.png" width="70%" alt="MVC Pattern">
 </p>
 
 ---
@@ -51,7 +51,7 @@ MVC is a popular software architecture that helps separate the components in an 
 ## Database Schema
 
 <p align="center">
-  <img src="https://github.com/trgtanhh04/Clinic-management/blob/main/er.png" width="60%" alt="Database Schema">
+  <img src="https://github.com/trgtanhh04/Clinic-management/blob/main/er.png" width="70%" alt="Database Schema">
 </p>
 
 ---
